@@ -6520,7 +6520,7 @@ _installalias() {
 }
 
 # nocron confighome noprofile accountemail
-install() {
+_install() {
 
   if [ -z "$LE_WORKING_DIR" ]; then
     LE_WORKING_DIR="$DEFAULT_INSTALL_HOME"
@@ -7864,7 +7864,7 @@ _process() {
   fi
   _debug "Running cmd: ${_CMD}"
   case "${_CMD}" in
-  install) install "$_nocron" "$_confighome" "$_noprofile" "$_accountemail" ;;
+  install) _install "$_nocron" "$_confighome" "$_noprofile" "$_accountemail" ;;
   uninstall) uninstall "$_nocron" ;;
   upgrade) upgrade ;;
   issue)
